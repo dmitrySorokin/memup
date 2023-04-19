@@ -76,7 +76,7 @@ class AddDoneFlag(TrajectoryPreprocessor):
     """
     def process_single_(self, trajectory: Trajectory):
         if not trajectory.data.get('done', None):
-            terminals = np.full(len(trajectory), False, dtype=np.bool)
+            terminals = np.full(len(trajectory), False, dtype=bool)
             terminals[-1] = True
             trajectory.data['done'] = terminals
         return trajectory

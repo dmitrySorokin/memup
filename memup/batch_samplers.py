@@ -169,8 +169,8 @@ class TruncatedMemUPSampler(FullTrajMemUPSampler):
 
         if update_buffers:
             self._batch_size = batch_size
-            self._mem_offset = np.zeros(batch_size, dtype=np.int)
-            self._ep_lengths = np.zeros(batch_size, dtype=np.int)
+            self._mem_offset = np.zeros(batch_size, dtype=np.int64)
+            self._ep_lengths = np.zeros(batch_size, dtype=np.int64)
             self._batch_buffer = None
 
     def _fill_batch(self):
